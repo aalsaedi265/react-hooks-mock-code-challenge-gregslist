@@ -1,11 +1,20 @@
-import React from "react";
-// import ListingCard from "./ListingCard";
+import React,{useState} from "react";
+import ListingCard from "./ListingCard";
 
-function ListingsContainer() {
+
+function ListingsContainer({Items,cleans}) {
+
+
+
+  let itemCars=Items.map(e=>(
+    <ListingCard key={e.id} cleans={cleans} item={e}/>
+  ))
+
+
   return (
     <main>
       <ul className="cards">
-        {/* use the ListingCard component to display listings */}
+        {itemCars}
       </ul>
     </main>
   );
